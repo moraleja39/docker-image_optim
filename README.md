@@ -1,6 +1,6 @@
 # docker-image_optim
-[![Docker Automated build](https://img.shields.io/docker/automated/colthreepv/docker-image_optim.svg?style=for-the-badge&maxAge=3600)]()
-[![Docker Pulls](https://img.shields.io/docker/pulls/colthreepv/docker-image_optim.svg?style=for-the-badge&maxAge=600)]()  
+[![Docker Automated build](https://img.shields.io/docker/automated/denji/docker-image_optim.svg?style=for-the-badge&maxAge=3600)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/denji/docker-image_optim.svg?style=for-the-badge&maxAge=600)]()  
 A docker image giving the built version of the best image optimizing CLI apps together with `image_optim` to rule them all
 
 ## Credits
@@ -17,7 +17,7 @@ A docker image giving the built version of the best image optimizing CLI apps to
 ## Minimal usage
 Execute image_optim in your current dir:
 ```shell
-docker run --rm -ti -v $(pwd):/images/ colthreepv/docker-image_optim image_optim -r .
+docker run --rm -ti -v $(pwd):/images/ denji/docker-image_optim image_optim -r .
 ```
 
 ## How To Use
@@ -26,7 +26,7 @@ docker run --rm -ti \
   # Add whatever image directory you like
   # -v $(cd && cd images && pwd):/images/ \
   -v $(pwd)/config:/root/.config/ \
-  colthreepv/docker-image_optim sh
+  denji/docker-image_optim sh
 ```
 
 Then a simple `cd /images && image_optim -r .` would optimize all the images in the mounted path.
@@ -53,6 +53,6 @@ The drawback is having to maintain 2 Dockerfiles
 ```shell
 $ docker images
 REPOSITORY                          TAG      SIZE
-colthreepv/docker-image_optim       dev      365MB
-colthreepv/docker-image_optim       latest   93.8MB
+denji/docker-image_optim       dev      365MB
+denji/docker-image_optim       latest   93.8MB
 ```
