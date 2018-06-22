@@ -1,6 +1,11 @@
 # docker-image_optim
-[![Docker Automated build](https://img.shields.io/docker/automated/denji/docker-image_optim.svg?style=for-the-badge&maxAge=3600)]()
-[![Docker Pulls](https://img.shields.io/docker/pulls/denji/docker-image_optim.svg?style=for-the-badge&maxAge=600)]()  
+
+[![](https://images.microbadger.com/badges/version/denji/docker-image_optim.svg)](https://microbadger.com/images/denji/docker-image_optim)
+
+### Docker image
+
+[![](https://images.microbadger.com/badges/image/denji/docker-image_optim.svg)](https://microbadger.com/images/denji/docker-image_optim) [![](https://img.shields.io/docker/automated/denji/docker-image_optim.svg)](https://hub.docker.com/r/denji/docker-image_optim/builds/) [![](https://img.shields.io/docker/pulls/denji/docker-image_optim.svg)](https://hub.docker.com/r/denji/docker-image_optim/) [![](https://img.shields.io/docker/stars/denji/docker-image_optim.svg)](https://hub.docker.com/r/denji/docker-image_optim/)
+
 A docker image giving the built version of the best image optimizing CLI apps together with `image_optim` to rule them all
 
 ## Credits
