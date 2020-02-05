@@ -4,10 +4,10 @@ ENV \
   # https://github.com/amadvance/advancecomp/releases
   ADVANCECOMP_VERSION=2.1 \
   # https://github.com/kohler/gifsicle/releases
-  GIFSICLE_VERSION=1.91 \
+  GIFSICLE_VERSION=1.92 \
   # http://www.ijg.org/
-  IJG_VERSION=9c \
-  JHEAD_VERSION=3.00 \
+  IJG_VERSION=9d \
+  JHEAD_VERSION=3.04 \
   # https://github.com/danielgtaylor/jpeg-archive/releases
   JPEGARCHIVE_VERSION=2.2.0 \
   # https://www.kokkonen.net/tjko/projects.html#jpegoptim
@@ -22,7 +22,7 @@ ENV \
   # https://github.com/pornel/pngquant/releases
   PNGQUANT_VERSION=2.12.1 \
   # https://github.com/ImageOptim/libimagequant/releases
-  LIBIMAGEQUANT_VERSION=2.12.1
+  LIBIMAGEQUANT_VERSION=2.12.6
 
 WORKDIR /tmp
 
@@ -82,7 +82,7 @@ RUN apk update && apk add \
   && autoreconf -i && ./configure && make && make install \
 
   # jhead
-  && curl -O http://www.sentex.net/~mwandel/jhead/jhead-$JHEAD_VERSION.tar.gz \
+  && curl -O https://www.sentex.net/~mwandel/jhead/jhead-$JHEAD_VERSION.tar.gz \
   && tar zxf jhead-$JHEAD_VERSION.tar.gz \
   && cd jhead-$JHEAD_VERSION \
   && make && make install \
@@ -122,12 +122,12 @@ RUN apk update && apk add \
   && make && cp -f pngcrush /usr/local/bin \
 
   # pngout (binary distrib)
-  && curl -O http://static.jonof.id.au/dl/kenutils/pngout-$PNGOUT_VERSION-linux-static.tar.gz \
+  && curl -O https://www.jonof.id.au/files/kenutils/pngout-$PNGOUT_VERSION-linux-static.tar.gz \
   && tar zxf pngout-$PNGOUT_VERSION-linux-static.tar.gz \
   && cd pngout-$PNGOUT_VERSION-linux-static \
   && cp -f x86_64/pngout-static /usr/local/bin/pngout \
 
-# pngquant
+  # pngquant
   && curl -L -O https://github.com/ImageOptim/libimagequant/archive/$LIBIMAGEQUANT_VERSION.tar.gz \
   && tar xzf $LIBIMAGEQUANT_VERSION.tar.gz \
   && curl -L -O https://github.com/pornel/pngquant/archive/$PNGQUANT_VERSION.tar.gz \
@@ -141,7 +141,7 @@ RUN apk update && apk add \
 
   # image_optim
   && echo -e 'install: --no-document\nupdate: --no-document' > "$HOME/.gemrc" \
-  && gem install --no-ri --no-rdoc image_optim \
+  && gem install --no-document image_optim \
 
   # cleanup
   && rm -rf /tmp/* \
